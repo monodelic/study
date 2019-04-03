@@ -23,6 +23,11 @@ module Exercise
 
       # Написать свою функцию my_compact
       def my_compact
+        myc = self.class.new
+        for i in 0..(length - 1)
+          myc << self[i] unless self[i].nil?
+        end
+        myc
       end
 
       # Написать свою функцию my_reduce
