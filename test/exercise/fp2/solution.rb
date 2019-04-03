@@ -6,10 +6,19 @@ module Exercise
 
       # Написать свою функцию my_each
       def my_each
+        for element in self
+          yield element
+        end
+        self
       end
 
       # Написать свою функцию my_map
       def my_map
+        result = self.class.new([])
+        my_each do |element|
+          result << yield(element)
+        end
+        result
       end
 
       # Написать свою функцию my_compact
