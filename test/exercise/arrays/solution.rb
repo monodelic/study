@@ -3,7 +3,6 @@ module Exercise
     class << self
       def replace(array)
         new_array = positive_to_max(array)
-        puts new_array
         new_array
       end
 
@@ -16,11 +15,9 @@ module Exercise
 
       def search(array, query)
         return - 1 if array.empty?
-
         left = 0
         right = array.length
         mid = 0
-
         while left < right
           mid = left + ((right - left) / 2).ceil
           return mid if array[mid] == query
