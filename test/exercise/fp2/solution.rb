@@ -1,8 +1,6 @@
 module Exercise
   module Fp2
     class MyArray < Array
-      # Использовать стандартные функции массива для решения задач нельзя.
-      # Использовать свои написанные функции для реализации следующих - можно.
 
       # Написать свою функцию my_each
       def my_each
@@ -23,15 +21,23 @@ module Exercise
 
       # Написать свою функцию my_compact
       def my_compact
-        myc = self.class.new
+        my_c = self.class.new
         for i in 0..(length - 1)
-          myc << self[i] unless self[i].nil?
+          my_c << self[i] unless self[i].nil?
         end
-        myc
+        my_c
       end
 
       # Написать свою функцию my_reduce
-      def my_reduce
+      def my_reduce(accum = nil)
+        my_each do |el|
+          if accum.nil?
+            accum = el
+            next
+          end
+          accum = yield(accum, el)
+        end
+        accum
       end
     end
   end
