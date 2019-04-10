@@ -14,6 +14,13 @@ class RackTest < Test::Unit::TestCase
     assert_equal 'Hello World GET', browser.last_response.body
   end
 
+  def test_it_says_get_dick
+    browser = Rack::Test::Session.new(Rack::MockSession.new(Inatra))
+    browser.get '/dick'
+    assert browser.last_response.ok?
+    assert_equal 'Hello Mr.Dick', browser.last_response.body
+  end
+
   def test_it_says_post
     browser = Rack::Test::Session.new(Rack::MockSession.new(Inatra))
     browser.post '/hello'

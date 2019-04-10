@@ -4,6 +4,9 @@ Inatra.routes do
   get '/hello' do
     [200, {}, ['Hello World GET']]
   end
+  get '/dick' do
+    [200, {}, ['Hello Mr.Dick']]
+  end
   post '/hello' do
     [200, {}, ['Hello World POST']]
   end
