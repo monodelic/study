@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require './test/test_helper.rb'
 require_relative './solution.rb'

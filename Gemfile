@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 ruby '2.3.0'
+gem 'bundler', '2.0.1'
 
-gem 'rake'
-gem 'minitest'
-gem 'factory_girl'
 gem 'coveralls', require: false
-gem 'rubocop', require: false
+gem 'factory_girl'
+gem 'minitest'
 gem 'rack'
-gem 'test-unit'
 gem 'rack-test'
+gem 'rake'
+gem 'rubocop', require: false
+gem 'shotgun'
+gem 'test-unit'
